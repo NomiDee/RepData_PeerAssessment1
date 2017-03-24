@@ -21,7 +21,7 @@ stepsPerDay<-aggregate(steps~date,monitoringData,sum)
 barplot(stepsPerDay$steps, names.arg=stepsPerDay$date, main="Number of Steps per Day", xlab="Date", ylab="Number of Steps") 
 ```
 
-![](ProgrammingAssignment_files/figure-markdown_github/unnamed-chunk-3-1.png)
+![plot of chunk unnamed-chunk-3](ProgrammingAssignment_files/figure-markdown_github/unnamed-chunk-3-1.png)
 
 1.  Calculate and report the mean and median total number of steps taken per day
 
@@ -46,7 +46,7 @@ stepsPerInterval<-aggregate(steps~interval, monitoringData, mean)
 plot(stepsPerInterval$interval, stepsPerInterval$steps, type="l", col="blue", xlab="Time Interval", ylab="Average Number of Steps", main = "Average Number of Steps per Time Interval")
 ```
 
-![](ProgrammingAssignment_files/figure-markdown_github/unnamed-chunk-5-1.png)
+![plot of chunk unnamed-chunk-5](ProgrammingAssignment_files/figure-markdown_github/unnamed-chunk-5-1.png)
 
 1.  Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
@@ -119,8 +119,7 @@ med<-median(stepsPerDay$steps)
 g + geom_hline(yintercept=avg, col="blue") + geom_text(aes(0, avg, label = paste("Mean = ", round(avg)), vjust = -1), size = 3)
 ```
 
-![](ProgrammingAssignment_files/figure-markdown_github/unnamed-chunk-9-1.png)
-
+![plot of chunk unnamed-chunk-9](ProgrammingAssignment_files/figure-markdown_github/unnamed-chunk-9-1.png
 ``` r
 avg<-format(avg, scientifc=FALSE)
 med<-format(med, scientifc=FALSE)
@@ -150,4 +149,4 @@ p<-ggplot(stepsPerInterval2, aes(x=interval, y=steps)) + geom_line() + labs(titl
 print(p)
 ```
 
-![](ProgrammingAssignment_files/figure-markdown_github/unnamed-chunk-11-1.png)
+![plot of chunk unnamed-chunk-11](ProgrammingAssignment_files/figure-markdown_github/unnamed-chunk-11-1.png)
